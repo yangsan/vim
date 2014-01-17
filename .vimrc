@@ -1,3 +1,6 @@
+"开启文档类型侦测
+filetype on
+
 "不要兼容vi
 set nocompatible
 
@@ -7,17 +10,9 @@ let mapleader = ','
 "允许鼠标的使用
 set mouse=a
 
-"高亮光标所在行和列
-if &filetype == 'python'
-    set cul
-    set cuc
-    "用浅色高亮当前行
-    autocmd InsertEnter * se cul
-    autocmd InsertEnter * se cuc
-endif
-
 "光标移动到顶部和底部的时候保留三行的距离
 set scrolloff=3
+
 "打开自动高亮
 syntax on
 
@@ -42,6 +37,8 @@ set autoread
 
 "显示行号
 set number
+
+autocmd FileType python set cul cuc
 
 
 "打开wildmenu，用于命令行补完。比如在命令行输入 :color <Tab> 会出现一排电脑上可用的色彩方案，按<Tab>就能切换
@@ -92,6 +89,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+"将j和k的移动由逻辑行转为屏幕行
+map j gj
+map k gk
 
 "
 "
@@ -99,7 +99,6 @@ map <C-l> <C-W>l
 "Vundle vim的插件管理程序{
 
 """"""""
-filetype on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " 让Bundle管理Vundle
