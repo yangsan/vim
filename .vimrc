@@ -7,9 +7,27 @@ let mapleader = ','
 "允许鼠标的使用
 set mouse=a
 
+"高亮光标所在行和列
+if &filetype == 'python'
+    set cul
+    set cuc
+    "用浅色高亮当前行
+    autocmd InsertEnter * se cul
+    autocmd InsertEnter * se cuc
+endif
+
+"光标移动到顶部和底部的时候保留三行的距离
+set scrolloff=3
 "打开自动高亮
 syntax on
 
+"禁止生成临时文件
+set nobackup
+set noswapfile
+
+"搜索时忽略大小写
+
+set ignorecase
 "选择色彩方案
 colorscheme desert
 set background=dark
