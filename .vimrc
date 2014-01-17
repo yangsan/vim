@@ -181,7 +181,8 @@ Bundle 'Lokaltog/vim-easymotion'
 
 "markdown高亮插件
 Bundle 'plasticboy/vim-markdown'
-
+"正确识别markdown文件
+autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 
 filetype plugin indent on     " 必须的
 " Brief help
