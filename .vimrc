@@ -4,6 +4,9 @@ filetype on
 "不要兼容vi
 set nocompatible
 
+"将jj映射到escape
+imap jj <Esc>
+
 "设置一下leader键
 let mapleader = ','
 
