@@ -30,7 +30,7 @@ set t_Co=256
 
 "设置窗口大小
 set lines=40
-set columns=130
+set columns=100
  
 "文件被改变时自动读取
 set autoread
