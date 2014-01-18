@@ -184,6 +184,9 @@ Bundle 'plasticboy/vim-markdown'
 "正确识别markdown文件
 autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 
+"高效的注释工具
+Bundle 'scrooloose/nerdcommenter'
+
 filetype plugin indent on     " 必须的
 " Brief help
 " :BundleList          - list configured bundles
