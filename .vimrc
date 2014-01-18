@@ -24,12 +24,7 @@ set nobackup
 set noswapfile
 
 "搜索时忽略大小写
-
 set ignorecase
-"选择色彩方案
-colorscheme desert
-set background=dark
-set t_Co=256
 
 "设置窗口大小
 set lines=40
@@ -41,7 +36,7 @@ set autoread
 "显示行号
 set number
 
-autocmd FileType python highlight CorlorColumn ctermbg=240
+"autocmd FileType python highlight CorlorColumn ctermbg=240
 autocmd FileType python set cul cuc colorcolumn=81
 
 
@@ -151,7 +146,7 @@ Bundle 'klen/python-mode'
 "缩进
 let g:pymode_indent = 1 
 "折叠
-let g:pymode_folding = 1
+let g:pymode_folding = 0
 "快速运动
 let g:pymode_motion = 1
 "文档
@@ -175,10 +170,10 @@ let g:pymode_lint_checker = ['pyflakes','pep8']
 let g:pymode_rope = 0 
 ""let g:pymode_rope_completion_bind = '<C-Space>'
 "高亮
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
+let g:pymode_syntax = 0
+"let g:pymode_syntax_all = 1
+"let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+"let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 "快速移动
 Bundle 'Lokaltog/vim-easymotion'
@@ -191,6 +186,9 @@ autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 "高效的注释工具
 Bundle 'scrooloose/nerdcommenter'
 
+"色彩方案solarized
+Bundle 'altercation/vim-colors-solarized'
+
 filetype plugin indent on     " 必须的
 " Brief help
 " :BundleList          - list configured bundles
@@ -201,3 +199,9 @@ filetype plugin indent on     " 必须的
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
 "}
+
+"选择色彩方案
+set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
+colorscheme solarized
