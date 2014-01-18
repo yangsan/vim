@@ -41,7 +41,8 @@ set autoread
 "显示行号
 set number
 
-autocmd FileType python set cul cuc
+autocmd FileType python highlight CorlorColumn ctermbg=240
+autocmd FileType python set cul cuc colorcolumn=81
 
 
 "打开wildmenu，用于命令行补完。比如在命令行输入 :color <Tab> 会出现一排电脑上可用的色彩方案，按<Tab>就能切换
