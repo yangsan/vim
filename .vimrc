@@ -28,7 +28,7 @@ set ignorecase
 
 "设置窗口大小
 set lines=40
-set columns=100
+set columns=80
  
 "文件被改变时自动读取
 set autoread
