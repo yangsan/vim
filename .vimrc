@@ -29,7 +29,8 @@ set ignorecase
 "设置窗口大小
 set lines=40
 set columns=80
- 
+autocmd FileType python set columns=100
+
 "文件被改变时自动读取
 set autoread
 
@@ -92,6 +93,8 @@ map <C-l> <C-W>l
 map j gj
 map k gk
 
+"处理在括号里退出编辑模式的不方便
+imap ll <C-o>
 "
 "
 "
