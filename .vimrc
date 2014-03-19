@@ -27,9 +27,10 @@ set noswapfile
 set ignorecase
 
 "设置窗口大小
-set lines=40
-set columns=80
-autocmd FileType python set columns=100
+"set lines=40
+"set columns=80
+"autocmd FileType python set columns=100
+"autocmd FileType c set columns=100
 
 "文件被改变时自动读取
 set autoread
@@ -39,6 +40,7 @@ set number
 
 "autocmd FileType python highlight CorlorColumn ctermbg=240
 autocmd FileType python set cul cuc colorcolumn=81
+autocmd FileType c set cul cuc
 
 
 "打开wildmenu，用于命令行补完。比如在命令行输入 :color <Tab> 会出现一排电脑上可用的色彩方案，按<Tab>就能切换
@@ -84,17 +86,17 @@ set si
 set wrap
 
 "在分屏中间方便移动的映射
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
 
 "将j和k的移动由逻辑行转为屏幕行
 map j gj
 map k gk
 
 "处理在括号里退出编辑模式的不方便
-imap ll <C-o>
+imap kk <C-o>
 "
 "
 "
@@ -191,6 +193,10 @@ Bundle 'scrooloose/nerdcommenter'
 
 "色彩方案solarized
 Bundle 'altercation/vim-colors-solarized'
+
+"c support
+"Bundle 'WolfgangMehner/vim-plugins/c-support'
+Bundle 'c.vim'
 
 filetype plugin indent on     " 必须的
 " Brief help
