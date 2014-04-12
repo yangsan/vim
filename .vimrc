@@ -29,9 +29,10 @@ set ignorecase
 "设置窗口大小
 "set lines=40
 "set columns=80
-"autocmd FileType python set columns=100
-"autocmd FileType c set columns=100
+autocmd FileType python set columns=90 lines=50
+autocmd FileType c set columns=90 lines=50
 
+autocmd FileType markdown set columns=90 lines=50
 "文件被改变时自动读取
 set autoread
 
@@ -41,7 +42,7 @@ set number
 "autocmd FileType python highlight CorlorColumn ctermbg=240
 autocmd FileType python set cul cuc colorcolumn=81
 autocmd FileType c set cul cuc
-
+au BufNewFile *.py 0r /home/kevin/Templates/header.template
 
 "打开wildmenu，用于命令行补完。比如在命令行输入 :color <Tab> 会出现一排电脑上可用的色彩方案，按<Tab>就能切换
 set wildmenu
@@ -127,7 +128,7 @@ Bundle 'AutoClose'
 "显示树状文件目录
 Bundle 'The-NERD-tree'
 "定义一下启动nerd tree的热键，我用的是Ctrl+n
-map <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
 "自动打开nerdtree
 "autocmd vimenter * NERDTree
 "在只剩一个nerdtree的情况下关闭窗口
@@ -185,6 +186,7 @@ Bundle 'Lokaltog/vim-easymotion'
 
 "markdown高亮插件
 Bundle 'plasticboy/vim-markdown'
+
 "正确识别markdown文件
 autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 
@@ -197,6 +199,25 @@ Bundle 'altercation/vim-colors-solarized'
 "c support
 "Bundle 'WolfgangMehner/vim-plugins/c-support'
 Bundle 'c.vim'
+
+"indent guides
+Bundle 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
+
+"multiple cursors
+Bundle 'terryma/vim-multiple-cursors'
+
+"vim plugin for pandoc
+"Bundle 'vim-pandoc/vim-pandoc'
+"map for convinience
+nmap <leader>p !pandoc -o %:r.pdf % --latex-engine xelatex
+
+"goyo
+Bundle 'junegunn/goyo.vim'
+nnoremap <leader><space> :Goyo<CR>
 
 filetype plugin indent on     " 必须的
 " Brief help
@@ -214,3 +235,4 @@ set background=dark
 set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
+
