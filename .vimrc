@@ -23,9 +23,6 @@ syntax on
 set nobackup
 set noswapfile
 
-"搜索时忽略大小写
-set ignorecase
-
 "设置窗口大小
 "set lines=40
 "set columns=80
@@ -36,8 +33,11 @@ autocmd FileType markdown set columns=90 lines=50
 "文件被改变时自动读取
 set autoread
 
-"显示行号
-set number
+"显示相对行号
+set relativenumber
+
+"回删设置
+set backspace=indent,eol,start
 
 "autocmd FileType python highlight CorlorColumn ctermbg=240
 autocmd FileType python set cul cuc colorcolumn=81
@@ -52,9 +52,12 @@ set ruler
 
 "高亮搜索结果
 set hlsearch
-
 "在输入搜索文字时，实时匹配
 set incsearch
+"搜索时忽略大小写
+set ignorecase
+"输入大写字母时会严格的匹配，输入小写时配合上面一条则也可以匹配大写
+set smartcase
 
 "显示配对的括号
 set showmatch
@@ -62,12 +65,19 @@ set showmatch
 "统一编码
 set encoding=utf8
 
-
 "将tab换成空格
 set expandtab
-
 "智能tab
 set smarttab
+
+"自动缩进
+set autoindent
+"智能缩进
+set smartindent
+"smartindent for c
+"set cindent
+"在缩进不成整数时自动补全
+set shiftround
 
 "1tab==4空格
 set shiftwidth=4
@@ -77,14 +87,11 @@ set tabstop=4
 set lbr
 set tw=500
 
-"自动缩进
-set ai
-
-"智能缩进
-set si
-
 "自动换行
 set wrap
+
+"行末或者tab处显示特殊的标记
+"set list
 
 "在分屏中间方便移动的映射
 nmap <C-j> <C-w>j
