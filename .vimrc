@@ -44,6 +44,12 @@ autocmd FileType python set cul cuc colorcolumn=81
 autocmd FileType c set cul cuc
 au BufNewFile *.py 0r /home/kevin/Templates/header.template
 
+"打开文件时回到上次退出时光标的位置
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
 "打开wildmenu，用于命令行补完。比如在命令行输入 :color <Tab> 会出现一排电脑上可用的色彩方案，按<Tab>就能切换
 set wildmenu
 
@@ -52,6 +58,7 @@ set ruler
 
 "高亮搜索结果
 set hlsearch
+nnoremap <CR> :nohlsearch<cr>
 "在输入搜索文字时，实时匹配
 set incsearch
 "搜索时忽略大小写
@@ -223,8 +230,8 @@ Bundle 'terryma/vim-multiple-cursors'
 nmap <leader>p !pandoc -o %:r.pdf % --latex-engine xelatex
 
 "goyo
-Bundle 'junegunn/goyo.vim'
-nnoremap <leader><space> :Goyo<CR>
+"Bundle 'junegunn/goyo.vim'
+"nnoremap <leader><space> :Goyo<CR>
 
 filetype plugin indent on     " 必须的
 " Brief help
