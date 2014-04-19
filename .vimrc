@@ -8,7 +8,7 @@ set nocompatible
 imap jj <Esc>
 
 "设置一下leader键
-let mapleader = ','
+let mapleader = '/'
 
 "允许鼠标的使用
 set mouse=a
@@ -55,6 +55,8 @@ set wildmenu
 
 "总显示当前位置，见右下角
 set ruler
+
+set nrformats=
 
 "高亮搜索结果
 set hlsearch
@@ -213,6 +215,9 @@ Bundle 'altercation/vim-colors-solarized'
 "c support
 "Bundle 'WolfgangMehner/vim-plugins/c-support'
 Bundle 'c.vim'
+
+"surround
+Bundle 'tpope/vim-surround'
 
 "indent guides
 Bundle 'nathanaelkane/vim-indent-guides'
